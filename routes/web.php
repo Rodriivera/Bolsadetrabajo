@@ -34,6 +34,11 @@ Route::middleware('auth') // guard por defecto: web
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    // Redirigir la raíz a la bolsa de trabajo
+    Route::get('/', function () {
+        return redirect('/bolsadetrabajo/home');
+    });
+
     
 
 
