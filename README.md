@@ -51,13 +51,13 @@ cd bolsa-trabajo
 ### 2. Instalar dependencias
 
 composer install
+
 npm install
-npm run build
 
 
 ### 3. Importar base de datos
 
-importar la base de datos "dev338.sql" en phpMyAdmin
+importar la base de datos "dev338.sql" ubicada en la raiz del proyecto en phpMyAdmin
 
 
 ### 4. Configurar variables de entorno
