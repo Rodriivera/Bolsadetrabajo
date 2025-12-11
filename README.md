@@ -1,108 +1,75 @@
-# 🎓 Bolsa de Trabajo — ISFT38
+# Bolsa de Trabajo — ISFT38
 
-![Instituto Superior de Formación Técnica N°38 San Nicolás de los Arroyos](https://isft38.edu.ar/logo1.png)
+![ISFT 38](https://isft38.edu.ar/logo1.png)
 
-Sistema web donde estudiantes y egresados pueden registrarse, cargar su perfil profesional y postularse a ofertas laborales publicadas por el administrador de la institución.  
-Permite la gestión completa de perfiles, ofertas, postulaciones y generación de reportes.
 
----
-
-## ❓ ¿Qué problema resuelve?
-
-La plataforma centraliza las oportunidades laborales del instituto y facilita la conexión entre estudiantes/egresados y empresas.  
-Antes el proceso era manual y disperso (formularios, mails, planillas). 
-
-La Bolsa de Trabajo:
-
-- Ordena y digitaliza las postulaciones.
-- Permite a los alumnos crear perfiles profesionales completos.
-- Permite al administrador publicar ofertas, recibir postulantes y exportar información para enviar a empresas.
-- Aumenta la transparencia y accesibilidad del proceso de búsqueda laboral.
+Plataforma donde estudiantes y egresados crean su perfil, cargan CVs y se postulan a ofertas laborales administradas por el instituto. El panel de administración permite crear y actualizar ofertas, exportar postulaciones y comunicarse con postulantes.
 
 ---
 
-## 🛠️ Stack técnico usado
-
-**Backend**
-- PHP 8.1  
-- Laravel 10  
-- MySQL  
-
-**Frontend**
-- Blade Templates  
-- Bootstrap
-- JavaScript  
-
-**Otras herramientas**
-- Chart.js (estadísticas del panel administrador)
-- Exportación a Excel (Maatwebsite/Excel)
-- Autenticación nativa de Laravel
+## ¿Qué problema resuelve?
+- Centraliza las oportunidades laborales en un único portal institucional.
+- Digitaliza la gestión de perfiles, postulaciones y CVs (sin planillas ni correos sueltos).
+- Facilita el trabajo del administrador al publicar ofertas, revisar postulantes y exportar listados.
+- Mejora la experiencia de los alumnos: perfil completo, búsquedas filtradas y guardado de ofertas.
 
 ---
 
-## 🚀 Cómo correr el proyecto localmente
+## Stack técnico usado
+- Backend: Laravel 8 (PHP ^7.3|^8.0), MySQL, Laravel Sanctum, Flasher para notificaciones, exportación con Maatwebsite/Excel, generación de PDFs (Dompdf/MPDF/FPDF).
+- Frontend: Blade, Bootstrap 4.6, jQuery, Axios, Laravel Mix (Webpack); se incluye Vite scaffold pero no se usa en los scripts actuales.
+- Infra/otros: almacenamiento en disco `public` con `storage:link`, autenticación de usuarios propios (`auth:usuarios`), rutas separadas en `routes/bolsa_trabajo.php`.
 
-### 1. Clonar el repositorio
+---
 
+## Instrucciones para correrlo local
+1) Clonar el repo
+```bash
 git clone https://github.com/Rodriivera/Bolsadetrabajo.git
-cd Bolsadetrabajo-main
+cd Bolsadetrabajo
+```
 
-
-### 2. Instalar dependencias
-
+2) Instalar dependencias PHP y JS
+```bash
 composer install
-
 npm install
+```
 
-
-### 3. Importar base de datos
-
-importar la base de datos "dev338.sql" ubicada en la raiz del proyecto en phpMyAdmin
-
-
-### 4. Configurar variables de entorno
-
-Copiar el archivo .env.example:
-
-cp .env.example .env
-
-Configurar:
-
-Conexión MySQL
-
-APP_URL
-
-
-### 5. Generar relacion con las carpetas
-
+3) Configurar entorno
+```bash
+cp .env.example .env 
 php artisan key:generate
+```
+Edita `.env` con los datos de MySQL (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`) y la URL local (`APP_URL=http://localhost:8000`).
+
+4) Base de datos
+- Importar el dump `dev338.sql` (raíz del repo) en tu base MySQL.
 
 
-### 6. Generar clave de aplicación
-
+5) Enlazar storage
+```bash
 php artisan storage:link
+```
 
+6) Compilar assets
+```bash
+npm run dev  
 
-### 7. Iniciar el servidor local
+```
 
+7) Levantar el servidor
+```bash
 php artisan serve
-
+```
+La app quedará en http://localhost:8000 (la raíz `/` redirige a `/bolsadetrabajo/home`).
 
 ---
 
- 
-## 🖼️ Screenshots
-Home Page
-![Vista principal de la Bolsa de Trabajo](/public/images/home.png)
+## Screenshots o diagramas
+- Home / listado de ofertas (añade tu captura en public/images/home.png).
+- Búsqueda y guardados (public/images/busqueda.png, public/images/guardados.png).
+- Perfil del postulante y CV (public/images/perfil.png).
+- Dashboard administrador con métricas/exportación (public/images/dashboard.png).
 
-Búsqueda de ofertas
-![Vista de busquedas de ofertas de la Bolsa de Trabajo](/public/images/busqueda.png)
 
-Guardados
-![Vista de guardados de la Bolsa de Trabajo](/public/images/guardados.png)
 
-Perfil
-![Vista de perfil de la Bolsa de Trabajo](/public/images/perfil.png)
-
-Dashboard
-![Vista de dashboard de la Bolsa de Trabajo](/public/images/dashboard.png)
