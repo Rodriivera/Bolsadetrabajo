@@ -66,10 +66,10 @@ La app quedará en http://localhost:8000 (la raíz `/` redirige a `/bolsadetraba
 ---
 
 ## Screenshots o diagramas
-- Home / listado de ofertas (añade tu captura en public/images/home.png).
-- Búsqueda y guardados (public/images/busqueda.png, public/images/guardados.png).
-- Perfil del postulante y CV (public/images/perfil.png).
-- Dashboard administrador con métricas/exportación (public/images/dashboard.png).
-
+- Home / listado de ofertas ![Home](/public/images/home.png).
+- Búsqueda ![Búsqueda](/public/images/busqueda.png).
+- Guardados ![Guardados](/public/images/guardados.png).
+- Perfil del postulante ![Perfil](/public/images/perfil.png).
+- Dashboard administrador con métricas/exportación ![Dashboard](/public/images/dashboard.png).
 
 
