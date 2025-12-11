@@ -65,7 +65,7 @@ La app quedará en http://localhost:8000 (la raíz `/` redirige a `/bolsadetraba
 
 ---
 
-## Screenshots o diagramas
+## Screenshots
 - Home / listado de ofertas ![Home](/public/images/home.png).
 - Búsqueda ![Búsqueda](/public/images/busqueda.png).
 - Guardados ![Guardados](/public/images/guardados.png).
