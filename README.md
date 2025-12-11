@@ -44,8 +44,8 @@ La Bolsa de Trabajo:
 
 ### 1. Clonar el repositorio
 
-git clone https://github.com/usuario/bolsa-trabajo.git
-cd bolsa-trabajo
+git clone https://github.com/Rodriivera/Bolsadetrabajo.git
+cd Bolsadetrabajo-main
 
 
 ### 2. Instalar dependencias
